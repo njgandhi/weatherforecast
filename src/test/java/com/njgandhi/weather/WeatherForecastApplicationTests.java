@@ -26,7 +26,7 @@ public class WeatherForecastApplicationTests {
 
 		String city = "Ahmedabad";
 
-		mvc.perform(get("/weather/city-forecast")
+		mvc.perform(get("/forecast/city")
 				.contentType(MediaType.APPLICATION_JSON)
 				.param("city", city))
 				.andDo(print())
@@ -34,13 +34,13 @@ public class WeatherForecastApplicationTests {
 
 		city = "xyztest";
 
-		mvc.perform(get("/weather/city-forecast")
+		mvc.perform(get("/forecast/city")
 				.contentType(MediaType.APPLICATION_JSON)
 				.param("city", city))
 				.andDo(print())
 				.andExpect(status().isNotFound());
 
-		mvc.perform(get("/weather/city-forecast")
+		mvc.perform(get("/forecast/city")
 				.contentType(MediaType.APPLICATION_JSON))
 				.andDo(print())
 				.andExpect(status().isBadRequest());

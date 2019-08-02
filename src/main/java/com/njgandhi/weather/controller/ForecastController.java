@@ -10,20 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.njgandhi.weather.service.ForecastService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
+@Api(value = "Forecast API", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
-@RequestMapping("/weather")
+@RequestMapping("/forecast")
 public class ForecastController {
 	
 	@Autowired
 	private ForecastService forecastService;
 
 	@ApiOperation("Return a JSON object that gives the weather averages.")
-	@GetMapping(value = "/city-forecast", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> weatherForecastAverage(@ApiParam("City") @RequestParam(required = true) String city) {
-		return forecastService.weatherForecastAverage(city);
+	@GetMapping(value = "/city", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAverageWeatherForecast(@ApiParam("City") @RequestParam(required = true) String city) {
+		return forecastService.getAverageWeatherForecast(city);
 	}
 
 }

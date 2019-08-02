@@ -33,7 +33,7 @@ public class ForecastService {
 		this.forecastRestTemplate = restTemplateBuilder.build();
 	}
 
-	public ResponseEntity<?> weatherForecastAverage(String city) {
+	public ResponseEntity<?> getAverageWeatherForecast(String city) {
 		List<ForecastAverageResponse> result = new ArrayList<ForecastAverageResponse>();
 		try {
 			WeatherForecastListVO weatherForecastList = this.forecastRestTemplate.getForObject(this.url(city),

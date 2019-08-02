@@ -8,7 +8,7 @@ This API was all developed in Java 8 and Spring Boot in order to demonstrate an 
 - Average of daily (06:00 - 18:00) and nightly (18:00 - 06:00) temperatures in Celsius for the next 3 days from today's date.
 - Average of pressure for the next 3 days from today's date.
 
-## API documentation and Test of user
+## API documentation 
 I have used Swagger2 from maven dependency for documentation of API.
 To check maven, once application is up then go to console and hit url 'http://localhost:8080/weather/swagger-ui.html', where you find Forecast controller and click on that.
 Now click on 'try-it-out'. Enter city name as you want.

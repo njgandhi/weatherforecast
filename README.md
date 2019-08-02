@@ -53,7 +53,7 @@ As you can see, the return is a list of objects with information from the next t
 This test can also be performed by a specific tool for REST calls, in my case I used Postman. The API test linke we developed is obtained by the code below:
 ```
 curl -X GET 
-"http://localhost:8080/api/v1/weather/city-forecast?city=Ahmedabad" 
+"http://localhost:8080/weather/forecast/city?city=Ahmedabad" 
 -H "accept: application/json"
 ```
 

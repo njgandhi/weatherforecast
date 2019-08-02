@@ -64,15 +64,15 @@ public class ForecastAverageResponse implements Serializable {
 		this.quantPressure = quantPressure;
 	}
 
-	public void plusMap(WeatherForecastVO map) {
-		if (map.isDaily()) {
-			this.totalDaily = this.totalDaily.add(map.getMain().getTemp());
+	public void addWeatherForecast(WeatherForecastVO weatherForecast) {
+		if (weatherForecast.isDaily()) {
+			this.totalDaily = this.totalDaily.add(weatherForecast.getMain().getTemp());
 			this.quantDaily++;
 		} else {
-			this.totalNightly = this.totalNightly.add(map.getMain().getTemp());
+			this.totalNightly = this.totalNightly.add(weatherForecast.getMain().getTemp());
 			this.quantNightly++;
 		}
-		this.totalPressure = this.totalPressure.add(map.getMain().getTemp());
+		this.totalPressure = this.totalPressure.add(weatherForecast.getMain().getTemp());
 		this.quantPressure++;
 	}
 
